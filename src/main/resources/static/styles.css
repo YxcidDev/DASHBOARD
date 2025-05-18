@@ -1,0 +1,64 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 202px;
+  height: 2070.4px;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.sidebar .nav {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .nav-item {
+  margin: 15px 0;
+}
+
+.sidebar .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .nav-link i {
+  margin-right: 10px;
+}
+
+.content {
+  margin-left: 202px;
+  padding: 20px;
+  width: calc(100% - 202px);
+}
+
+.custom-card {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.custom-card:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
