@@ -12,59 +12,111 @@
 </head>
 <style>
     body {
-  font-family: 'Orbitron', sans-serif;
-}
+        font-family: 'Orbitron', sans-serif;
+    }
 
     .custom-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -2;
-      width: 100vw;
-      height: 100vh;
-      background-color: #000000; /* Equivalent to bg-neutral-950 */
-      background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
-      background-repeat: no-repeat;
-      background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        /* Equivalent to bg-neutral-950 */
+        background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-  </style>
-    
+
+    input:-webkit-autofill {
+        box-shadow: 0 0 0 1000px #000 inset !important;
+        -webkit-text-fill-color: #fff !important;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    .input-wrapper {
+        position: relative;
+        width: 100%;
+        margin: 50px auto;
+    }
+
+    .input-box {
+        font-size: 16px;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        color: #08AEEA;
+        width: 100%;
+        background-color: transparent;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    .underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #08AEEA;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .input-box:focus {
+        border-color: #08AEEA;
+        outline: none;
+    }
+
+    .input-box:focus+.underline {
+        transform: scaleX(1);
+    }
+</style>
+
 <body class="custom-background">
 
-    <div class="container-fluid d-flex justify-content-center align-items-center" style=" height: 100vh; padding: 40px; ">
-        
-        <div class="col-6 d-flex justify-content-center align-items-center" style=" height: 100%; background-color: #000;">
-          
-                <div class="p-4" style="max-width: 400px; width: 100%; ">
-                    <h2 class="text-center mb-5" style="color: #ffffff;">Iniciar Sesión</h2>
+    <div class="container-fluid d-flex justify-content-center align-items-center"
+        style=" height: 100vh; padding: 40px; ">
 
-                    <form th:action="@{/login}" method="post">
-                        <div class="mb-4">
-                            <input type="text" class="form-control" name="usuario" placeholder="Nombre de usuario" style="font-family: 'Courier New', Courier, monospace;"
-                                required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="password" class="form-control" name="pass" placeholder="Contraseña" required>
-                        </div>
-                        <div class="d-grid my-4">
-                            <button type="submit" class="btn btn-light">Entrar</button>
-                        </div>
-                    </form>
+        <div class="col-6 d-flex justify-content-center align-items-center"
+            style=" height: 100%; background-color: #000;">
 
-                    <p class="text-danger text-center" th:if="${error}" th:text="${error}"></p>
-                
-                 </div>
+            <div class="p-4" style="max-width: 400px; width: 100%; ">
+                <h2 class="text-center mb-5" style="color: #ffffff;">Iniciar Sesión</h2>
 
-                 
+                <form th:action="@{/login}" method="post">
+
+                    <div class="input-wrapper mb-4">
+                        <input type="text" class="input-box" name="usuario" placeholder="Nombre de usuario" required>
+                        <span class="underline"></span>
+                    </div>
+
+                    <div class="input-wrapper mb-5">
+                        <input type="password" class="input-box" name="pass" placeholder="Contraseña" required>
+                        <span class="underline"></span>
+                    </div>
+
+
+                    <div class="d-grid my-4">
+                        <button type="submit" class="btn btn-light">Entrar</button>
+                    </div>
+                </form>
+
+                <p class="text-danger text-center" th:if="${error}" th:text="${error}"></p>
+
+            </div>
+
+
         </div>
 
-        <div class="col-6" style=" height: 100%; box-sizing: content-box; mask-image: linear-gradient( black 90%, transparent);">
-           <div class="d-flex justify-content-center align-items-center" style="width: 100%; height: 100%;">
-             <img src="img/FondoLogin.png" alt="" style="object-fit: cover; width: 100%; height: 100%;">
-           </div>
+        <div class="col-6"
+            style=" height: 100%; box-sizing: content-box; mask-image: linear-gradient( black 90%, transparent);">
+            <div class="d-flex justify-content-center align-items-center" style="width: 100%; height: 100%;">
+                <img src="img/FondoLogin.png" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+            </div>
         </div>
-        
-        
+
+
 
     </div>
 
