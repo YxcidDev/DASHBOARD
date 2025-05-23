@@ -74,52 +74,35 @@
 </style>
 
 <body class="custom-background">
-
     <div class="container-fluid d-flex justify-content-center align-items-center"
         style=" height: 100vh; padding: 40px; ">
-
         <div class="col-6 d-flex justify-content-center align-items-center"
             style=" height: 100%; background-color: #000;">
-
             <div class="p-4" style="max-width: 400px; width: 100%; ">
                 <h2 class="text-center mb-5" style="color: #ffffff;">Iniciar Sesión</h2>
-
                 <form th:action="@{/login}" method="post">
-
                     <div class="input-wrapper mb-4">
                         <input type="text" class="input-box" name="usuario" placeholder="Nombre de usuario" required>
                         <span class="underline"></span>
                     </div>
-
                     <div class="input-wrapper mb-5">
                         <input type="password" class="input-box" name="pass" placeholder="Contraseña" required>
                         <span class="underline"></span>
                     </div>
-
-
                     <div class="d-grid my-4">
                         <button type="submit" class="btn btn-light">Entrar</button>
                     </div>
                 </form>
-
                 <p class="text-danger text-center" th:if="${error}" th:text="${error}"></p>
-
             </div>
-
-
         </div>
-
         <div class="col-6"
             style=" height: 100%; box-sizing: content-box; mask-image: linear-gradient( black 90%, transparent);">
             <div class="d-flex justify-content-center align-items-center" style="width: 100%; height: 100%;">
                 <img src="img/FondoLogin.png" alt="" style="object-fit: cover; width: 100%; height: 100%;">
             </div>
         </div>
-
-
-
     </div>
-
 </body>
 
 </html>

@@ -21,20 +21,14 @@ public class DashboardController {
         return "login";
     }
 
-    
-
     @PostMapping("/login")
     public String login(@RequestParam String usuario, @RequestParam String pass, Model model) {
         LoginModel login = loginRepository.findByUsuarioAndPass(usuario, pass);
-
         if (login != null) {
-
             return "dashboard";
-
         } else {
             model.addAttribute("error", "Usuario o contraseña incorrectos");
             return "login";
         }
     }
-
 }

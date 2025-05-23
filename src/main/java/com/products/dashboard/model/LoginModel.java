@@ -6,16 +6,11 @@ import jakarta.persistence.*;
 @Table(name = "login")
 public class LoginModel {
     
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
-    @Column(name = "usuario", nullable = false)
+    
     private String usuario;
-
-    @Column(name = "pass", nullable = false)
     private String pass;
 
     public LoginModel() {

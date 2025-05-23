@@ -9,5 +9,4 @@ import com.products.dashboard.model.LoginModel;
 @Repository
 public interface LoginRepository extends JpaRepository<LoginModel, Long> {
    LoginModel findByUsuarioAndPass(String usuario, String pass);
-
 }
